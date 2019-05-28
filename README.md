@@ -1,4 +1,4 @@
-This repository contains the PCF controls developed by Delegate. We will put focus in this are, so stay tuned by following the repo.
+This repository contains the PCF controls developed by Delegate. We will put focus on PCF, so stay tuned by following the repo.
 
 # Year Picker
 This control is bound to a Date-only field. The purpose is to make it easier to only pick a year from a date field. The input field is a number field, so a num-pad appears on mobile.
