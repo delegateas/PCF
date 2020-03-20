@@ -31,7 +31,7 @@ export class YearPicker implements ComponentFramework.StandardControl<IInputs, I
 		state: ComponentFramework.Dictionary, 
 		container:HTMLDivElement)
 	{
-		this._value = context.parameters.value.raw;
+		this._value = context.parameters.value.raw || undefined;
 
 		this._notifyOutputChanged = notifyOutputChanged;
 		this._refreshData = this.refreshData.bind(this);
@@ -50,7 +50,7 @@ export class YearPicker implements ComponentFramework.StandardControl<IInputs, I
 	 */
 	public updateView(context: ComponentFramework.Context<IInputs>): void
 	{
-		this._value = context.parameters.value.raw;
+		this._value = context.parameters.value.raw || undefined;
 		this._updateValue();
 	}
 
