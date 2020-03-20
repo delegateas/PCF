@@ -1,0 +1,47 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: PowerAppsToolInstaller@0
+  inputs:
+    XrmOnlineManagementApiVersion: '1.1.0.9060'
+    XrmToolingCrmConnectorVersion: '3.3.0.862'
+    XrmToolingPackageDeploymentVersion: '3.3.0.862'
+    MicrosoftPowerAppsCheckerVersion: '1.0.2'
+    CrmSdkCoreToolsVersion: '9.1.0.17'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- task: PowerShell@2
+  inputs:
+    filePath: '.\setVersion.ps1'
+    arguments: '$(Build.BuildNumber)'
+  displayName: 'Set Version'
+
+- script: |
+    npm install
+    npm run build
+    cd ./Soltuion/
+  displayName: 'npm install and build'
+
+- task: MSBuild@1
+  inputs:
+    solution: '**.*proj' 
+    msbuildArguments: '/t:build /restore /p:configuration=Release'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: './Solution/bin/Release/mvowpcf.zip'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

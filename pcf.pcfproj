@@ -17,6 +17,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\.gitignore"/>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\bin\**"/>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\obj\**"/>
+    <ExcludeDirectories Include="$(OutputPath)\**"/>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.pcfproj"/>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.pcfproj.user"/>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\*.sln"/>
+    <ExcludeDirectories Include="$(MSBuildThisFileDirectory)\node_modules\**"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\**" Exclude="@(ExcludeDirectories)"/>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include=".\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

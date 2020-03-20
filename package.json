@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "@types/node": "^10.12.18",
-    "@types/powerapps-component-framework": "1.1.0"
+    "@types/powerapps-component-framework": "^1.2.0",
+    "@types/react": "^16.9.19",
+    "antd": "^3.26.11",
+    "react": "^16.12.0",
+    "viewerjs": "^1.5.0"
   },
   "devDependencies": {
-    "pcf-scripts": "~0",
-    "pcf-start": "~0"
+    "pcf-scripts": "^1",
+    "pcf-start": "^1"
   }
 }

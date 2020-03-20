@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="mvow" constructor="TreeView" version="0.0.0" display-name-key="TreeView" description-key="Tree view for seeing children" control-type="standard">
+    <property name="dummyProperty" display-name-key="Dummy Property" description-key="Used to get record ID" of-type="SingleLine.TextArea" usage="bound" required="true" />
+    <property name="maxHeight" display-name-key="Max height" description-key="Max Height of the component. Is in pixels. Entering nothing will allow the component to expand the indefinitely." of-type="Whole.None" usage="input" required="false" />
+    <property name="isMock" display-name-key="Use mock data" description-key="Decides wether to get data from ID, or predefined mock data. Enter 'yes' to get mock data." of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="downloadAttachments" display-name-key="Download Attachments" description-key="Specify wether to download an attachment when double clicking, or simply open it in a new tab. 'yes' for download." of-type="SingleLine.Text" usage="input" required="false" />
+    <property name="relationshipMap" display-name-key="Relationship Map" description-key="A map of the children that should be displayed in the tree, in JSON format." of-type="Multiple" usage="input" required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="../node_modules/antd/dist/antd.min.css" order="1" />
+    </resources>
+    <feature-usage>
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+  </control>
+</manifest>
