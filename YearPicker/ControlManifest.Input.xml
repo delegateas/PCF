@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="delegate" constructor="YearPicker" version="1.0.0" display-name-key="Year Picker" description-key="A number control that returns the number as a datetime interpreted as a year" control-type="standard">
+  <control namespace="delegate" constructor="YearPicker" version="0.0.0" display-name-key="Year Picker" description-key="A number control that returns the number as a datetime interpreted as a year" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="value" display-name-key="Value" description-key="Value" of-type="DateAndTime.DateOnly" usage="bound" required="true" />
     <!-- 
